@@ -1,0 +1,285 @@
+/*
+ * CSS Variables -------------------------- */
+
+:root {
+  --template-width: 1170px;
+  --template-full-width: 100%;
+  --color-blue: rgb(105, 195, 255);
+  --color-green: rgba(76, 185, 68, 1);
+  --color-white: rgba(255, 255, 255, 1);
+  --color-light-grey: rgb(246, 246, 246);
+  --color-yellow: rgba(245, 238, 158, 1);
+  --color-red: rgba(240, 101, 67, 1);
+  --color-black: rgba(0, 16, 33, 1);
+  --color-french-sky-blue: rgba(127, 150, 255, 1);
+  --color-raspberry-pink: rgba(229, 99, 153, 1);
+  --color-dark-purple: rgba(50, 14, 59, 1);
+  --font-page-title: 'Bungee Shade', Impact, Haettenschweiler, 'Arial Narrow Bold', sans-serif;
+  --font-body-copy: 'Ubuntu', Arial, Helvetica, sans-serif;
+  --font-code: Hack;
+  --font-size-large: 3em;
+  --font-size-medium: 2em;
+  --font-size-small: 1em;
+}
+
+html {
+  font-family: var(--font-body-copy);
+}
+
+body {
+  height: 100vh;
+  background-image: linear-gradient(to right top, #CCCCCC, #f2f2f2, #f6f6f6, #fbfbfb, #ffffff);
+}
+
+/*
+ * Layout -------------------------- */
+
+.layout-wrapper {
+  display: grid;
+  grid-template-columns: 100%;
+  grid-template-rows: auto;
+  grid-template-areas:
+    "header header header header"
+    "main main main main"
+    "footer footer footer footer";
+  justify-items: center;
+  padding: 1em;
+}
+
+.layout-header {
+  grid-area: header;
+  margin: 0 auto;
+  width: var(--template-full-width);
+}
+
+.layout-main {
+  grid-area: main;
+  margin: 0 auto;
+  width: 90%;
+}
+
+.layout-footer {
+  grid-area: footer;
+  margin: 2em auto;
+  width: var(--template-full-width);
+}
+
+
+.layout-btn-wall {
+  display: flex;
+  flex-wrap: wrap;
+  flex-direction: row;
+  justify-content: flex-start;
+  align-items: stretch;
+  align-content: stretch;
+  height: 100vh;
+  width: 100vw;
+}
+
+.ui-btn {
+  flex-grow: 1;
+  border-right: none;
+  border-bottom: 1px solid var(--color-black);
+  padding: 1em;
+  font-family: var(--font-page-title);
+  font-size: 2em;
+  font-weight: 800;
+  color: var(--color-black);
+  transition: 0.3s;
+  line-height: 1;
+  text-align: center;
+  background-color: var(--color-white);
+}
+
+.ui-btn:hover {
+  background-color: var(--color-blue);
+  color: var(--color-white);
+  transition: 0.3s;
+}
+
+/*
+ * Tablet and Desktop ----------------- */
+
+@media screen and (min-width: 768px) {
+  .layout-wrapper {
+    padding: 0em;
+  }
+
+  .layout-header,
+  .layout-main,
+  .layout-footer {
+    width: var(--template-width);
+  }
+  .ui-btn {
+    border-right: 1px solid var(--color-black);
+    line-height: 10;
+  }
+}
+
+/*
+ * Bash Terminal thingy --------------- */
+
+.ui-bash-terminal {
+  position: relative;
+  width: auto;
+  padding: 2em;
+  background-color: var(--color-black);
+  border-radius: .8em;
+}
+
+.ui-bash-combinator {
+  color: var(--color-red);
+}
+
+.ui-bash-selector {
+  color: var(--color-blue);
+}
+
+.ui-bash-property {
+  color: var(--color-green);
+}
+
+.ui-bash-brackets {
+  color: var(--color-white);
+}
+
+.ui-bash-value {
+  color: var(--color-yellow);
+}
+
+.ui-bash-buttons {
+  position: absolute;
+  top: 5px;
+  right: 20px;
+  font-size: 6em;
+  color: var(--color-white);
+}
+
+.ui-bash-buttons span {
+  display: block;
+  line-height: 0;
+  margin: 0;
+  padding: 0;
+  float: left;
+  width: 32px;
+  height: 32px;
+}
+
+.ui-bash-buttons span:nth-child(1) {
+  color: var(--color-red);
+}
+
+.ui-bash-buttons span:nth-child(2) {
+  color: var(--color-yellow);
+}
+
+.ui-bash-buttons span:nth-child(3) {
+  color: var(--color-green);
+}
+
+.ui-bash-code {
+  font-family: var(--font-code);
+  color: var(--color-white);
+  line-height: 1.5;
+}
+
+/*
+ * Browser chrome ----------------------- */
+
+.ui-browser-chrome {
+  display: flex;
+  flex-direction: row;
+  flex-wrap: nowrap;
+  justify-content: flex-start;
+  align-items: stretch;
+  background-color: var(--color-white);
+  border-radius: .5em;
+  margin: 1em 0;
+  padding: 1em;
+}
+
+.ui-browser-chrome__tab-bar {
+  background-color: var(--color-green);
+}
+
+.ui-browser-chrome__window {
+  background-color: var(--color-white);
+}
+
+/*
+ * Typography -------------------------- */
+
+h1 {
+  font-family: var(--font-page-title);
+  font-size: var(--font-size-large);
+}
+
+.layout-header h1 {
+  font-weight: inherit;
+}
+
+.layout-header h2 {
+  font-weight: 300;
+}
+
+a:link {
+  color: var(--color-black);
+  text-decoration: underline;
+  font-weight: 300;
+}
+
+a:active {
+  color: red;
+}
+
+a:visited {
+  color: green;
+  text-decoration: underline;
+}
+
+a:hover {
+  color: var(--color-green)
+}
+
+.layout-footer a {
+  font-weight: 300;
+  color: var(--color-black);
+}
+
+.layout-footer a:hover {
+  color: var(--color-blue);
+}
+
+p {
+  font-family: var(--font-body-copy);
+  font-weight: 300;
+}
+
+.color-blue {
+  color: var(--color-blue);
+}
+
+.color-green {
+  color: var(--color-green);
+}
+
+.color-white {
+  color: var(--color-white);
+}
+
+.color-yellow {
+  color: var(--color-yellow);
+}
+
+.color-red {
+  color: var(--color-red);
+}
+
+.color-black {
+  color: var(--color-black);
+}
+
+.ui-browser-chrome ~ p {
+  color: red;
+  font-size: 1em;
+ }

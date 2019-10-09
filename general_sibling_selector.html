@@ -1,0 +1,81 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta http-equiv="X-UA-Compatible" content="ie=edge">
+  <title>General Sibling Selector</title>
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/normalize/8.0.1/normalize.min.css">
+  <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Bungee+Shade|Ubuntu:300,500,700&display=swap">
+  <link rel="stylesheet" href="//cdn.jsdelivr.net/npm/hack-font@3/build/web/hack-subset.css">
+  <link rel="stylesheet" href="css/template.css">
+  <link rel="stylesheet" href="css/animate.css">
+
+  <link rel="stylesheet" href="css/general-sibling-selector.css">
+</head>
+
+<body>
+  <div class="layout-wrapper">
+    <header class="layout-header">
+      <h1 class="color-black">General Sibling Selector</h1>
+      <h2 class="color-black">
+        Targets any element that is sibling of another, any p tag after the img element will be styled orange.
+      </h2>
+    </header>
+
+    <main class="layout-main">
+      <article class="ui-bash-terminal animated fast fadeInLeft">
+        <div class="ui-bash-buttons">
+          <span>.</span>
+          <span>.</span>
+          <span>.</span>
+        </div>
+
+        <pre class="ui-bash-code">
+  <span class="ui-bash-selector" title="This is a selector">.ui-browser-chrome__window img <span class="ui-bash-combinator" title="This is a combinator">~</span> p</span> <span class="ui-bash-brackets" title="Left curly bracket">{</span>
+    <span class="ui-bash-property">color</span>: <span class="ui-bash-value" title="Property value">#ff9900</span>;
+    <span class="ui-bash-property">font-weight</span>: <span class="ui-bash-value" title="Property value">300</span>;
+  <span class="ui-bash-brackets" title="Right curly bracket">}</span>
+
+        </pre>
+      </article>
+
+      <div class="ui-browser-chrome">
+        <div class="ui-browser-chrome__tab-bar"></div>
+        <div class="ui-browser-chrome__window">
+          <img src="./img/kitlope-lake.jpg" alt="Rain Forest" width="100%" />
+          <p>Rainforests are forests characterized by high and continuous rainfall, with annual rainfall in the case of tropical rainforests between 2.5 and 4.5 metres (98 and 177 in),[1] and definitions varying by region for temperate rainforests. The monsoon trough, alternatively known as the intertropical convergence zone, plays a significant role in creating the climatic conditions necessary for the Earth's tropical rainforests: which are distinct from monsoonal areas of seasonal tropical forest.</p>
+          <small>source:
+            <a href="https://en.wikipedia.org/wiki/Rainforest"
+              title="Wikipedia> opens in a new tab"
+              target="_blank"
+              >
+            https://en.wikipedia.org/wiki/Rainforest
+            </a>
+          </small>
+        </div>
+      </div>
+    </main>
+
+    <footer class="layout-footer">
+      Fonts:
+      <a href="https://fonts.google.com/specimen/Bungee+Shade" title="Bungee Shade">Bungee Shade</a> |
+      <a href="https://fonts.google.com/specimen/Ubuntu" title="Ubuntu">Ubuntu</a> |
+      <a href="https://sourcefoundry.org/hack" title="Hack">Hack</a> .
+      <a href="./">Go back Home</a>
+    </footer>
+  </div>
+
+  <!-- Global site tag (gtag.js) - Google Analytics -->
+  <script async src="https://www.googletagmanager.com/gtag/js?id=UA-19677147-1"></script>
+  <script>
+    window.dataLayer = window.dataLayer || [];
+    function gtag(){dataLayer.push(arguments);}
+    gtag('js', new Date());
+
+    gtag('config', 'UA-19677147-1');
+  </script>
+</body>
+
+</html>
